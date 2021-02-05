@@ -18,6 +18,7 @@ package osb
 
 import (
 	"context"
+	"github.com/kyma-incubator/compass/components/system-broker/pkg/types"
 
 	schema "github.com/kyma-incubator/compass/components/director/pkg/graphql"
 
@@ -32,11 +33,11 @@ type Converter interface {
 }
 
 type CatalogEndpoint struct {
-	lister    ApplicationsLister
+	lister    types.ApplicationsLister
 	converter Converter
 }
 
-func NewCatalogEndpoint(l ApplicationsLister, c Converter) *CatalogEndpoint {
+func NewCatalogEndpoint(l types.ApplicationsLister, c Converter) *CatalogEndpoint {
 	return &CatalogEndpoint{l, c}
 }
 

@@ -18,6 +18,7 @@ package osb
 
 import (
 	"context"
+	"github.com/kyma-incubator/compass/components/system-broker/pkg/types"
 
 	schema "github.com/kyma-incubator/compass/components/director/pkg/graphql"
 
@@ -30,10 +31,10 @@ import (
 )
 
 type GetBindingEndpoint struct {
-	credentialsGetter BundleCredentialsFetcherForInstance
+	credentialsGetter types.BundleCredentialsFetcherForInstance
 }
 
-func NewGetBindingEndpoint(credentialsGetter BundleCredentialsFetcherForInstance) *GetBindingEndpoint {
+func NewGetBindingEndpoint(credentialsGetter types.BundleCredentialsFetcherForInstance) *GetBindingEndpoint {
 	return &GetBindingEndpoint{
 		credentialsGetter: credentialsGetter,
 	}

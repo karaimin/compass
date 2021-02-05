@@ -18,6 +18,7 @@ package osb
 
 import (
 	"context"
+	"github.com/kyma-incubator/compass/components/system-broker/pkg/types"
 
 	schema "github.com/kyma-incubator/compass/components/director/pkg/graphql"
 	"github.com/kyma-incubator/compass/components/director/pkg/log"
@@ -28,10 +29,10 @@ import (
 )
 
 type BindLastOperationEndpoint struct {
-	credentialsGetter BundleCredentialsFetcher
+	credentialsGetter types.BundleCredentialsFetcher
 }
 
-func NewBindLastOperationEndpoint(credentialsGetter BundleCredentialsFetcher) *BindLastOperationEndpoint {
+func NewBindLastOperationEndpoint(credentialsGetter types.BundleCredentialsFetcher) *BindLastOperationEndpoint {
 	return &BindLastOperationEndpoint{
 		credentialsGetter: credentialsGetter,
 	}
