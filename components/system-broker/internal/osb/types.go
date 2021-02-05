@@ -25,6 +25,11 @@ import (
 )
 
 //go:generate go run github.com/maxbrunsfeld/counterfeiter/v6 . applicationsLister
+type ApplicationLister interface {
+	FetchApplication(ctx context.Context, id string) (*director.ApplicationOutput, error)
+}
+
+//go:generate go run github.com/maxbrunsfeld/counterfeiter/v6 . applicationsLister
 type ApplicationsLister interface {
 	FetchApplications(ctx context.Context) (*director.ApplicationsOutput, error)
 }
